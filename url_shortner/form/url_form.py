@@ -12,7 +12,7 @@ class UrlForm(ModelForm):
     model=Url
     fields=["original_url"]
     widget={
-      "original_url":URLInput( attrs={"placeholder": "請輸入職缺名稱"})
+      "original_url":URLInput( attrs={"placeholder": "請輸入網址"})
     }
     labels={
        "original_url":"原始網址"
