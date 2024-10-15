@@ -11,8 +11,8 @@ class UrlForm(ModelForm):
   class Meta:
     model=Url
     fields=["original_url"]
-    widget={
-      "original_url":URLInput( attrs={"placeholder": "請輸入網址"})
+    widgets={
+      "original_url":URLInput( attrs={ "class":"input input-bordered w-full max-w-xs text-base" ,"placeholder": "請輸入網址"})
     }
     labels={
        "original_url":"原始網址"

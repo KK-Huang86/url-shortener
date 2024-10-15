@@ -1,26 +1,31 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link href="{% static 'styles/styles.css' %}" rel="stylesheet">
   </head>
   <body>
     <form action="{% url 'shorten_url' %}" method="POST">
       {%csrf_token%} 
       {% for field in form %}
-     <label>{{field.label}}</label>
-     {{field}}
-     <div>
-      <button type="submit">送出</button>
-     </div>
+        <label>{{field.label}}</label>
+          {{field}}
+        <div>
+          <button class="btn btn-outline">送出</button>
+        </div>
       {% endfor %}
     </form>
     {% if short_url %}
-    <div>
-        <p>Shortened URL: <a href="{{ short_url }}"target="_blank">{{ short_url }}</a></p>
-    </div>
+      <div>
+        <p>短網址 <a class="link link-primary" href="{{ short_url }}"target="_blank">{{ short_url }}</a></p>
+
+      </div>
     {% endif %}
+
   </body>
 </html>
+
+
