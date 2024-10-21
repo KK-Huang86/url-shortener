@@ -22,7 +22,6 @@ def shorten_url(request):
                 return render(request, 'index.html', {'short_url': short_url, 'form': form})
 
             else:
-                # 創建新的短網址
                 short_code = generate_short_code()
                 short_url = request.build_absolute_uri('/') + short_code
                 print(f"short_url: {short_url} ")
@@ -30,10 +29,8 @@ def shorten_url(request):
                 return render(request, 'index.html', {'short_url': short_url, 'form': form})
 
     else:
-        # 如果表單無效，返回表單並顯示錯誤訊息
         form = UrlForm()
     return render(request, 'index.html', {'form': form})
-  
 
 def redirect_original_url(request, short_url):
     try:
@@ -41,7 +38,6 @@ def redirect_original_url(request, short_url):
         return redirect(original_url)
     except Url.DoesNotExist:
         return render(request, '404.html', status=404)
-
 
 def generate_short_code():
     characters = string.ascii_letters + string.digits
