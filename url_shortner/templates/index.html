@@ -1,13 +1,5 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link href="{% static 'styles/styles.css' %}" rel="stylesheet">
-  </head>
-  <body>
+{%extends "layout/base.html"%}
+  {%block content%}
     <form action="{% url 'shorten_url' %}" method="POST">
       {%csrf_token%} 
       {% for field in form %}
@@ -23,8 +15,5 @@
         <p>短網址 <a class="link link-primary" href="{{ short_url }}"target="_blank">{{ short_url }}</a></p>
       </div>
     {% endif %}
-
-  </body>
-</html>
-
+  {%endblock%}
 
