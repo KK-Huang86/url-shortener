@@ -12,11 +12,11 @@ class UrlForm(ModelForm):
     model=Url
     fields=["original_url","is_active"]
     widgets={
-      "original_url":URLInput( attrs={ "class":"input input-bordered w-full max-w-xs text-base" ,"placeholder": "請輸入網址"}),
-      "is_active":CheckboxInput(attrs={ "class":"" ,}),
+      "original_url":URLInput( attrs={ "class":"input input-bordered w-full max-w-xs text-base" ,"placeholder": "請輸入或貼上完整的網址"}),
+      "is_active":CheckboxInput(attrs={ "class":"checkbox" "input type=checkbox checked=checked" })
     }
     labels={
-      "original_url":"原始網址",
+      "original_url":"連結",
       "is_active":"是否啟用短網址"
     }
 
