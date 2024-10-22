@@ -1,10 +1,20 @@
-  <form>
-    <div>
-      <label class="w-full max-w-xs form-control">
-        <div class="label">
-          <span class="label-text">備註說明</span>  
-        </div>
-      </label>  
-          <textarea class="w-full textarea textarea-bordered" ></textarea>
+<div class="mt-8"> <!-- Add margin top for spacing -->
+  <form method="POST" action="{% url 'shorturl:get_information' %}">
+    {%csrf_token%}
+    <input type="hidden" name="original_url"/>
+      <div class="flex items-center gap-2 ">
+        <label class="inline-flex form-control">
+          <div class="label">
+            <span class="label-text">備註說明</span>  
+          </div>
+        </label>
+        <div>
+          <button class="btn btn-active btn-link">取得頁面資訊</button>
+        </div>  
+      </div>
+      <textarea class="w-full textarea textarea-bordered"></textarea>
     </div>
-  </form>
+  </form>    
+</div>
+</div>
+</div>

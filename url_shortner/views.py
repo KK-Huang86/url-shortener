@@ -1,5 +1,6 @@
 from django.shortcuts import render,redirect
 from django.views.decorators.http import require_POST
+from django.http import HttpResponse
 from .form.url_form import UrlForm
 from .models import Url
 import string
@@ -52,3 +53,13 @@ def generate_short_code():
 
 
 
+def get_information(request):
+    if request.method == "POST":
+        url = request.POST.get('original_url')
+    if url:
+        print(url) 
+        return HttpResponse(f"Original URL: {url}")
+    else:
+        return HttpResponse("No URL provided.")
+    
+    return HttpResponse("This view only handles POST requests.")
