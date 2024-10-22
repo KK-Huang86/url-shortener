@@ -1,6 +1,6 @@
 from url_shortner.models import Url
 from django.forms import ModelForm
-from django.forms.widgets import URLInput
+from django.forms.widgets import URLInput,CheckboxInput
 from django.core.validators import URLValidator
 from django.core.exceptions import ValidationError
 from django import forms
@@ -10,12 +10,14 @@ from django import forms
 class UrlForm(ModelForm):
   class Meta:
     model=Url
-    fields=["original_url"]
+    fields=["original_url","is_active"]
     widgets={
-      "original_url":URLInput( attrs={ "class":"input input-bordered w-full max-w-xs text-base" ,"placeholder": "請輸入網址"})
+      "original_url":URLInput( attrs={ "class":"input input-bordered w-full max-w-xs text-base" ,"placeholder": "請輸入網址"}),
+      "is_active":CheckboxInput(attrs={ "class":"" ,}),
     }
     labels={
-       "original_url":"原始網址"
+      "original_url":"原始網址",
+      "is_active":"是否啟用短網址"
     }
 
   def clean_original_url(self):
