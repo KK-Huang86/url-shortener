@@ -10,6 +10,5 @@ urlpatterns = [
     path('',views.index,name="index"),
     path('shorten/', views.shorten_url, name='shorten_url'),
     path('<str:short_url>/', views.redirect_original_url, name='redirect_original_url'),
-    path('information',views.get_information,name='get_information')
 ]
 

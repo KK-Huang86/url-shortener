@@ -1,4 +1,4 @@
 import Alpine from "alpinejs";
 import "./fontawesome.js";
-import "./copy_url.js";
+import "./pageInfo.js";
 Alpine.start();

@@ -8,8 +8,8 @@ import random
 # Create your views here.
 
 def index(request):
-  form = UrlForm()
-  return render(request,"index.html",{"form":form})
+    form = UrlForm()
+    return render(request,"index.html",{"form":form})
 
 @require_POST
 def shorten_url(request):
@@ -52,14 +52,3 @@ def generate_short_code():
     return short_code
 
 
-
-def get_information(request):
-    if request.method == "POST":
-        url = request.POST.get('original_url')
-    if url:
-        print(url) 
-        return HttpResponse(f"Original URL: {url}")
-    else:
-        return HttpResponse("No URL provided.")
-    
-    return HttpResponse("This view only handles POST requests.")
