@@ -12,6 +12,8 @@ python-dotenv = "^1.0.1"
 psycopg2 = "^2.9.9"
 requests = "^2.32.3"
 beautifulsoup4 = "^4.12.3"
+whitenoise = "^6.7.0"
+gunicorn = "^23.0.0"
 
 
 [build-system]

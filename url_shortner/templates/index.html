@@ -1,6 +1,6 @@
 {% extends "layout/base.html" %}
 {% block content %}
-<div class="flex-initial mx-auto w-150">
+<div x-data="combinedFunction" class="flex-initial mx-auto w-150">
   <div class="container max-w-3xl p-12 mx-auto border-2 border-gray-300 rounded-lg shadow-md">
     <form action="{% url 'shorturl:shorten_url' %}" method="POST">
       {% csrf_token %}
@@ -25,7 +25,7 @@
               <div class="label">
                 <span class="label-text">短網址</span>
               </div>
-              <div  x-data="copy_url" class="flex items-center"> 
+              <div  class="flex items-center"> 
                   <input x-ref="short_url" type="text" value="{{ short_url }}" class="w-full input input-bordered" />
                   <button  type="button" class="relative z-10 p-2 ml-2 bg-gray-200 rounded cursor-pointer "@click.prevent="copyToClipboard($refs.short_url.value)">
                     <i class="fa-regular fa-copy"></i>
@@ -58,10 +58,10 @@
                 </div>
             </label> 
             <div>
-                <button class="btn btn-active btn-link">取得頁面資訊</button>
+                <button class="btn btn-active btn-link" @click.prevent="fetchPageInfo">取得頁面資訊</button>
             </div>  
         </div>
-        <textarea class="w-full textarea textarea-bordered"></textarea>
+        <textarea class="w-full textarea textarea-bordered" x-model="pageInfo" ></textarea>
       </div>
       
       <div class="mb-3">
