@@ -37,7 +37,6 @@ Alpine.data("combinedFunction", () => ({
   parseHTML(html) {
     const parser = new DOMParser();
     const doc = parser.parseFromString(html, "text/html");
-
     const title = doc.querySelector("title")
       ? doc.querySelector("title").innerText
       : "無法取得標題";

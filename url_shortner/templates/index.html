@@ -1,11 +1,10 @@
 {% extends "layout/base.html" %}
 {% block content %}
-<div x-data="combinedFunction" class="flex-initial mx-auto w-150">
-  <div class="container max-w-3xl p-12 mx-auto border-2 border-gray-300 rounded-lg shadow-md">
+<div x-data="combinedFunction" class="flex-initial mx-auto w-150 ">
+  <div class="container max-w-3xl p-12 mx-auto border-2 border-gray-300 rounded-lg shadow-md bg-slate-50 ">
     <form action="{% url 'shorturl:shorten_url' %}" method="POST">
       {% csrf_token %}
       <div class="flex flex-col space-y-4"> 
-        
         <div class="flex space-x-4"> 
           <div class="flex flex-col w-full">
             <label class="form-control">
@@ -14,7 +13,7 @@
               </div>
               {{ form.original_url }}
               <div class="label">
-                <span class="text-white label-text-alt">連結</span>
+                <span class="text-slate-50 label-text-alt">連結</span>
               </div>
             </label>
           </div>
