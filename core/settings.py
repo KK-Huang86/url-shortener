@@ -11,9 +11,12 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 import os
 from pathlib import Path
-from dotenv import load_dotenv
+from lib.utils.env import is_dev
 
-load_dotenv() 
+if is_dev():
+    from dotenv import load_dotenv
+
+    load_dotenv() 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -26,7 +29,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-ph2zxgzd_d(0@$r*-$-_)8r4s#-k924ufvuwsa6@b$rtm5n&3g'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG =is_dev()
 
 ALLOWED_HOSTS = []
 
@@ -43,6 +46,12 @@ INSTALLED_APPS = [
     'url_shortner'
 ]
 
+if is_dev():
+    INSTALLED_APPS += [
+        "django_extensions",
+        "debug_toolbar",
+    ]
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',  
@@ -53,6 +62,11 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+if is_dev():
+    MIDDLEWARE += [
+        "debug_toolbar.middleware.DebugToolbarMiddleware",
+    ]
 
 ROOT_URLCONF = 'core.urls'
 
