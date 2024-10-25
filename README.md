@@ -21,7 +21,7 @@
 1. **生產短網址：**
 
 - 將網址貼上，選擇是否啟用短網址，按下「送出」即可生成專屬短連結。
-- 點擊短網址旁的「複製圖示」，一鍵複製短網址，輕鬆分享！
+- 點擊短網址旁的「![url-shortener](static/imgs/url-shortener-4.png)」，一鍵複製短網址，輕鬆分享！
 
 ![url-shortener](static/imgs/url-shortener-2.png)
 
