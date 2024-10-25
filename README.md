@@ -51,7 +51,7 @@
 - **後端**：Python, Django
 - **資料庫**：SQLite
 - **版本控制**：Git
-- **部署**：AWS EC2（Nginx 反向代理）
+- **部署**：AWS EC2（Gunicorn 處理應用邏輯和請求、Nginx 反向代理）
 
 ## 未來優化
 
