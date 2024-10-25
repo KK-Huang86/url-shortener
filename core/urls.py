@@ -16,8 +16,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
+from debug_toolbar.toolbar import debug_toolbar_urls
+
+from lib.utils.env import is_dev
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include("url_shortner.urls"))
 ]
+
+if is_dev():
+    urlpatterns += debug_toolbar_urls()
