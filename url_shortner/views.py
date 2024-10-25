@@ -48,7 +48,6 @@ def generate_short_code():
     short_code=''.join(random.choice(characters) for i in range(6))
     while Url.objects.filter(short_url=short_code).exists():
         short_code=''.join(random.choice(characters) for i in range(6))
-
     return short_code
 
 
