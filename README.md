@@ -2,7 +2,7 @@
   短網址生產器 url-shortener
 </h1>
 
-![url-shortener](static/imgs/url-shortener-1.png.jpg)
+![url-shortener](static/imgs/url-shortener-1.png)
 
 ## 專案介紹
 
@@ -23,13 +23,13 @@
 - 將網址貼上，選擇是否啟用短網址，按下「送出」即可生成專屬短連結。
 - 點擊短網址旁的「複製圖示」，一鍵複製短網址，輕鬆分享！
 
-![url-shortener](static/imgs/url-shortener-2.png.jpg)
+![url-shortener](static/imgs/url-shortener-2.png)
 
 2. **取得頁面資訊：**
 
 - 短網址生成後，點擊「取得頁面資訊」，即可查看原始網址的標題及描述，方便了解網址內容。
 
-![url-shortener](static/imgs/url-shortener-3.png.jpg)
+![url-shortener](static/imgs/url-shortener-3.png)
 
 ## 安裝環境
 
