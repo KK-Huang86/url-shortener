@@ -14,7 +14,7 @@
 
 趕快來試試看吧！
 
-專案網址：[https://www.5xastrocampurl.site/](https://www.5xastrocampurl.site/)
+專案網址：[https://www.5xastrocampurl.site/](https://www.5xastrocampurl.site/)(已停用)
 
 ## 功能介紹
 
